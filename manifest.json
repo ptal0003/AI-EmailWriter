@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "AI-EmailWriter",
+  "description": "An AI based email response generator extension for Google Chrome",
+  "version": "1.0",
+
+  "icons": {
+    "16": "/assets/images/icons/icon16.png",
+    "48": "/assets/images/icons/icon48.png",
+    "128": "/assets/images/icons/icon128.png"
+  },
+  "author": "ptal0003@student.monash.edu",  
+  "action": {
+    "default_action": {
+        "16": "/assets/images/icons/icon16.png",
+        "48": "/assets/images/icons/icon48.png",
+        "128": "/assets/images/icons/icon128.png"
+    },
+    "default_popup": "/html/index.html"
+  },
+  "content_scripts": [{
+    "matches": ["https://www.gmail.com/*"],
+    "js": ["/js/index.js"]
+  }],
+  "background": {}
+  }
