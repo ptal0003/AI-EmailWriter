@@ -20,10 +20,7 @@
   },
   "content_scripts": [{
     "matches": ["https://www.gmail.com/*"],
-    "js": ["/js/index.js"]
-    
-  }],
-  "background": {
-  "service_worker": "/js/index.js"
-  }
+    "js": ["/js/index.js"],
+    "extension": "unsafe-inline"
+  }]
   }
