@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
       <link rel="stylesheet" href="../css/index.css"> 
     </head>
-    <body>
+    <body onload="helloThere()">
         
         <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="align-items: center;" >
             <div style="align-items: center;">
@@ -36,7 +36,7 @@
               Press the START button at the bottom to generate a response for the email selected.
             </div>
             <div class="mdl-card__actions mdl-card--border">
-              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="GenerateResponse()">
                 Generate Response
               </a>
             </div>

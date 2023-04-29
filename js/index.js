@@ -1,3 +1,6 @@
-function populateJSON(){
-    document.getElementById.getElementById("title") = text_data.en.headings.title;
+function helloThere(){
+    console.log("Hello")
+}
+function GenerateResponse(){
+    console.log("Calling ChatGPT")
 }
