@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-
 <html>
     <head>
-        
+      <link rel="stylesheet" href="../mdl/material.min.css">
+      <script src="../mdl/material.min.js"></script>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+      <link rel="stylesheet" href="../css/index.css"> 
     </head>
     <body>
-        <button id="show-dialog">Show Dialog</button>
-    </body>
-    
+        
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp" style="align-items: center;" >
+            <div style="align-items: center;">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--2-col">
+                  <img src="../assets/images/icons/icon48.png" style="margin-top: 50px;">
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                  <h1 id = "title">
+                      AI Email Generator
+                  </h1>      
+                </div>
+              </div>
+
+            </div>
+            
+            <div class="mdl-card__title">
+                <!-- Floating Multiline Textfield -->
+              <div class="mdl-textfield mdl-js-textfield" style="align-items: center; width: 500px;">
+                <textarea class="mdl-textfield__input" type="text" rows= "10" id="sample5" placeholder="Body of the response email" style="min-height: 190px;"></textarea>
+              </div>
+            
+            </div>
+            <!-- Floating Multiline Textfield -->
+            
+            <div class="mdl-card__supporting-text">
+              Press the START button at the bottom to generate a response for the email selected.
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+              <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                Generate Response
+              </a>
+            </div>
+            <div class="mdl-card__menu">
+              <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                <i class="material-icons">share</i>
+              </button>
+            </div>
+        </div>
+      
+      </body>
+      <script src ="../js/index.js"></script>
 </html>

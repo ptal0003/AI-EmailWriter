@@ -1,0 +1,13 @@
+.demo-card-wide.mdl-card {
+    width: 700px;
+    background-color: #ffffff;
+  }
+h1, p{
+    color: #6854d7;
+}
+.mdl-card__supporting-text{
+    color: #000000;
+}
+  .demo-card-wide > .mdl-card__title > mdl-textfield mdl-js-textfield{
+    height: 250px;
+  }

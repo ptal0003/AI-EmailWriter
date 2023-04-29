@@ -21,6 +21,9 @@
   "content_scripts": [{
     "matches": ["https://www.gmail.com/*"],
     "js": ["/js/index.js"]
+    
   }],
-  "background": {}
+  "background": {
+  "service_worker": "/js/index.js"
+  }
   }
