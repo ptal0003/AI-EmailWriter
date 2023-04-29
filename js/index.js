@@ -2,5 +2,6 @@ function helloThere(){
     console.log("Hello")
 }
 function GenerateResponse(){
-    console.log("Calling ChatGPT")
+    console.log(document.getElementById("user_response_prompt").value)
+
 }

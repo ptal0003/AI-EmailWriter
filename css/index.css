@@ -1,13 +1,31 @@
 .demo-card-wide.mdl-card {
-    width: 700px;
-    background-color: #ffffff;
+    width: 600px;
+    background-color: #f8f6f6;
   }
-h1, p{
+h1{
     color: #6854d7;
+}
+h6{
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+p{
+  color: black;
 }
 .mdl-card__supporting-text{
     color: #000000;
 }
   .demo-card-wide > .mdl-card__title > mdl-textfield mdl-js-textfield{
     height: 250px;
-  }
+}
+.mdl-textfield mdl-js-textfield{
+  width: 500px;
+}
+.mdl-textfield__input{
+  width: 500px;
+}
+.mdl-textfield__label{
+  width: 500px;
+}
