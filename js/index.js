@@ -33,11 +33,20 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
             let newBtn = document.createElement("btn");
             newBtn.className = "email-ai-writer-btn";
             newBtn.innerText = "Generate Email"
-            newBtn.style.fontSize = 6;
-            newBtn.style.borderRadius = "3px";
-            newBtn.style.padding = "5px 5px 5px 5px";
-            newBtn.style.backgroundColor = "LightBlue";
+            newBtn.style.fontSize = "small";
+            newBtn.style.borderRadius = "5px";
+            newBtn.style.width = "100px";
+            newBtn.style.padding = "10px 10px 10px 10px";
+            newBtn.style.backgroundColor = "DarkBlue";
+            newBtn.style.color = "DarkGrey";
+            newBtn.style.textAlign = "center";
+            newBtn.style.marginLeft = "15px"
+            newBtn.addEventListener("click", function(){
+                window.alert(newBtn.id);
+            })
+            console.log(actionButtonSections)
             for (let i = 0; i < actionButtonSections.length; i++){
+                newBtn.id = actionButtonSections[i].id + "-" + newBtn.className
                 actionButtonSections[i].appendChild(newBtn);
             } 
         }
