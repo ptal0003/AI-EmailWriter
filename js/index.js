@@ -155,7 +155,7 @@ const showModal = (mailTextId) => {
         <h4>
         How would you like to reply to the email?
         </h4>
-        <input placeholder = "Enter a brief reply to the email:" style = "width: 450px; font-size: 11px;"></input>
+        <input placeholder = "Enter a brief reply to the email:" style = "width: 450px; font-size: 11px;" id = "prompt_id"></input>
         <h4 id = "response_text" style = "display: none">
         Generated Response:
         </h4>
@@ -187,7 +187,23 @@ const showModal = (mailTextId) => {
         document.getElementById("response_text").style.display = "block"
         document.getElementById("copyButton").style.display = "block"
         
-
+        console.log(document.getElementById("email_context").value,document.getElementById("prompt_id").value )
+        const data = { "emailContext": document.getElementById("email_context").value, "replyPrompt": document.getElementById("prompt_id").value };
+        fetch('http://127.0.0.1:5000/generate-text', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          })
+            .then(response => response.json())
+            .then(data => {
+              // Handle the response from Python
+              console.log('Python response:', data);
+            })
+            .catch(error => {
+              console.error('Error:', error);
+            });
     })
 }
 const observer1 = new MutationObserver((mutations) => {
