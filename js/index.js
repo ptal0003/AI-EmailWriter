@@ -1,5 +1,4 @@
 function GenerateResponse(){
-    console.log(document.getElementById("user_response_prompt").value)
     let NEW_MESSAGE_INPUT = ".a3s.aiL";
         //NEW_MESSAGE_INPUT = ".gs";
         const bodyInput = document.querySelectorAll(NEW_MESSAGE_INPUT);
@@ -157,10 +156,14 @@ const showModal = (mailTextId) => {
         How would you like to reply to the email?
         </h4>
         <input placeholder = "Enter a brief reply to the email:" style = "width: 450px; font-size: 11px;"></input>
-    </div>
-    <div style="position:absolute; bottom:-65px; right:10px;">
+        <h4 id = "response_text" style = "display: none">
+        Generated Response:
+        </h4>
+        <textarea type="text" id="email_reply" style="min-height: 100px; width: 450px; font-size: 11px; resize: vertical; display: none" ></textarea>
+        </div>
+    <div style="bottom:-65px; right:10px; display: flex; justify-content: space-around">
         <button id = "generateButton" style="padding: 8px 12px; font-size: 10px; border-radius: 12px; border: none; margin: 10px">Generate Response</button>
-        <button id = "copyButton" style="padding: 8px 12px; font-size: 10px; border-radius: 12px; border: none; margin: 10px">Copy to Gmail</button>
+        <button id = "copyButton" style="padding: 8px 12px; font-size: 10px; border-radius: 12px; border: none; margin: 10px; display: none">Copy to Gmail</button>
     </div>
     </div>`;
     document.body.appendChild(modal);
@@ -173,6 +176,18 @@ const showModal = (mailTextId) => {
     const button = document.getElementById("close");
     button.addEventListener("click", function(){
         dialog.close();
+        document.getElementById("email_reply").style.display = "none"
+        document.getElementById("response_text").style.display = "none"
+        document.getElementById("copyButton").style.display = "none"
+        
+    })
+    const generateResponseButton = document.getElementById("generateButton")
+    generateResponseButton.addEventListener("click", function(){
+        document.getElementById("email_reply").style.display = "block"
+        document.getElementById("response_text").style.display = "block"
+        document.getElementById("copyButton").style.display = "block"
+        
+
     })
 }
 const observer1 = new MutationObserver((mutations) => {
@@ -200,7 +215,6 @@ const observer1 = new MutationObserver((mutations) => {
                     else{
                         newBtn.id = "newEmail_btn";
                     }
-                    console.log(newBtn.id)
                     //let newDiv = document.createElement("div");
                     newDiv.appendChild(newBtn)
                     btC.appendChild(newDiv)
