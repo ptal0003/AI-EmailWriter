@@ -3,15 +3,15 @@ import openai
 import os
 import json
 import requests
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 # Set up OpenAI API credentials
 OPENAI_API_KEY = '' #We need the key for OpenAI
 openai.api_key = OPENAI_API_KEY
 
 # Define a route for generating text
-@app.route('/generate-text', methods=['POST'])
+@app.route('/generate-text', methods=['GET','POST'])
 def generate_text():
     # Get the prompt from the request data
     prompt = request.json['replyPrompt']
@@ -23,10 +23,10 @@ def generate_text():
     model_engine = "GPT-3.5-turbo" #or "GPT-4"
     max_tokens = 1024 
 
-
+    response_content = {"body": "Successful"}
     # Generate text using the OpenAI API
     #messages=[{"role": "user", "content": overall_message}]
-    response_content = "Successful!!!!"
+    #response_content = "Successful!!!!"
     return (response_content)
 
 
@@ -47,4 +47,4 @@ def generate_text():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5500)
