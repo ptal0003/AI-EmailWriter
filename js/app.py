@@ -7,7 +7,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 # Set up OpenAI API credentials
-OPENAI_API_KEY = '' #We need the key for OpenAI
+OPENAI_API_KEY = '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' #We need the key for OpenAI
 openai.api_key = OPENAI_API_KEY
 
 # Define a route for generating text
@@ -20,15 +20,13 @@ def generate_text():
     overall_message = prompt + " " + email_context
 
     # Set up the OpenAI API parameters
-    model_engine = "GPT-3.5-turbo" #or "GPT-4"
+    model_engine = "gpt-3.5-turbo" #or "GPT-4"
     max_tokens = 1024 
 
-    response_content = {"body": "Successful"}
     # Generate text using the OpenAI API
-    #messages=[{"role": "user", "content": overall_message}]
+    messages=[{"role": "user", "content": overall_message}]
     #response_content = "Successful!!!!"
-    return (response_content)
-
+    
 
     response = openai.ChatCompletion.create(
         model= model_engine,
@@ -39,6 +37,8 @@ def generate_text():
 
 	# Get the generated text from the OpenAI API response
     response_content = response.choices[0]["message"]["content"].strip()
+    response = {"body": response_content}
+    return (response)
 
 
 

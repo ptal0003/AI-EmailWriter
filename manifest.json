@@ -4,7 +4,7 @@
   "description": "An AI based email response generator extension for Google Chrome",
   "version": "1.0",
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://mail.google.com/*","http://127.0.0.1:5000/*"],
+  "host_permissions": ["https://mail.google.com/*"],
   "icons": {
     "16": "/assets/images/icons/icon16.png",
     "48": "/assets/images/icons/icon48.png",
